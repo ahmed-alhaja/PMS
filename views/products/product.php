@@ -1,9 +1,7 @@
 <?php $page = 'product' ?>
 
 <!-- config -->
-
 <?php
-
 $configPath = dirname(__FILE__, 3) . '/config/config.php';
 
 if (file_exists($configPath)) {
@@ -11,98 +9,142 @@ if (file_exists($configPath)) {
 } else {
     die("Configuration file not found.");
 }
-
 ?>
 
 <!-- Get Products -->
-
 <?php include dirname(__FILE__, 3) . '/actions/products/getProduct.php'; ?>
 
 <?php
-
 $productId = $_GET['id'] ?? null;
-
 $product = null;
 
 if ($productId !== null) {
-
     foreach ($arrayProducts as $item) {
-
         if ($item['id'] == $productId) {
             $product = $item;
             break;
         }
     }
 }
-
 ?>
 
 <!-- layouts -->
-
 <?php include dirname(__FILE__, 3) . '/inc/layouts.php'; ?>
 
 <!-- Navigation -->
-
 <?php include dirname(__FILE__, 3) . '/inc/nav.php'; ?>
 
 <!-- Header -->
-
 <?php include dirname(__FILE__, 3) . '/inc/header.php'; ?>
 
 
+<!-- Product Details -->
 <?php if ($product !== null): ?>
 
-    <!-- Product Details -->
     <section class="py-5">
-
         <div class="container px-4 px-lg-5 my-5">
 
-            <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="row gx-5 align-items-center">
 
-                <div class="col-md-6">
+                <div class="col-md-6 mb-5 mb-md-0">
 
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm border-0">
 
                         <img
-                            class="card-img-top"
+                            class="card-img-top img-fluid"
                             src="<?= BASE_URL . 'views/products/images/' . $product['image'] ?>"
-                            alt="Product image" />
+                            alt="<?= $product['product_name'] ?>"
+                            style="height: 500px; object-fit: cover;" />
 
                     </div>
 
                 </div>
 
-                <!-- aus -->
 
-                <div class="col mb-5">
+                <div class="col-md-6">
 
                     <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body p-4">
+                        <div class="card-body p-5">
 
-                            <div class="text-center">
+                            <h1 class="display-6 fw-bolder mb-4">
+                                <?= $product['product_name'] ?>
+                            </h1>
 
-                                <h5 class="fw-bolder mb-2">
-                                    <?= $product['product_name'] ?>
-                                </h5>
 
-                                <div class="fs-5 fw-bold text-primary mb-3">
-                                    $<?= $product['price'] ?>
+                            <div class="fs-3 fw-bold text-primary mb-4">
+                                $<?= $product['price'] ?>
+                            </div>
+
+
+                            <div class="fs-5 fw-semibold text-success mb-4">
+                                Stock: <?= $product['stock_quantity'] ?>
+                            </div>
+
+
+                            <p class="text-secondary fs-5 mb-5">
+                                <?= $product['description'] ?>
+                            </p>
+
+
+                            <!-- Quantity + Add To Cart -->
+
+                            <form
+                                action="<?= BASE_URL . 'actions/cart/cartFunctions.php' ?>"
+                                method="POST">
+
+                                <div class="d-flex align-items-center mb-4">
+
+                                    <input
+                                        class="form-control text-center me-3"
+                                        id="inputQuantity"
+                                        name="quantity"
+                                        type="number"
+                                        value="1"
+                                        min="1"
+                                        style="max-width: 5rem" />
+
+
+                                    <input
+                                        type="hidden"
+                                        name="id"
+                                        value="<?= $product['id'] ?>">
+
+
+                                    <button
+                                        class="btn btn-outline-dark flex-shrink-0 px-4"
+                                        type="submit">
+
+                                        <i class="bi-cart-fill me-1"></i>
+
+                                        Add to cart
+
+                                    </button>
+
                                 </div>
 
-                                <div class="fs-5 fw-semibold text-success mb-3">
-                                    Stock: <?= $product['stock_quantity'] ?>
-                                </div>
+                            </form>
 
-                                <p class="text-secondary fs-6 fw-semibold mb-0">
-                                    <?= $product['description'] ?>
-                                </p>
+
+                            <!-- Actions -->
+
+                            <div class="d-flex gap-3">
+
+                                <button
+                                    class="btn btn-dark px-4"
+                                    type="button">
+                                    Buy Now
+                                </button>
+
+
+                                <button
+                                    class="btn btn-outline-secondary px-4"
+                                    type="button">
+                                    Save for Later
+                                </button>
 
                             </div>
 
-                        </div>
-
-                        <div class="card-footer bg-transparent border-0 p-4 pt-0">
                         </div>
 
                     </div>
@@ -112,9 +154,9 @@ if ($productId !== null) {
             </div>
 
         </div>
-
     </section>
-    
+
+
     <!-- Product Description -->
 
     <section class="py-5 bg-light">
@@ -170,7 +212,6 @@ if ($productId !== null) {
 
         // Current page
         $currentPage = $_GET['page'] ?? 1;
-
         $currentPage = (int) $currentPage;
 
         // Prevent invalid page number
@@ -216,12 +257,11 @@ if ($productId !== null) {
 
                     <?php for ($i = 1; $i <= $totalPages; $i++): ?>
 
-                        <li
-                            class="page-item <?= $i == $currentPage ? 'active' : '' ?>">
+                        <li class="page-item <?= $i == $currentPage ? 'active' : '' ?>">
 
                             <a
                                 class="page-link"
-                                href="?<?= $productId !== null ? 'id=' . $productId . '&' : '' ?>page=<?= $i ?>">
+                                href="?page=<?= $i ?>">
 
                                 <?= $i ?>
 
@@ -240,8 +280,3 @@ if ($productId !== null) {
     </div>
 
 </section>
-
-
-<!-- Footer -->
-
-<?php include dirname(__FILE__, 3) . '/inc/footer.php'; ?>

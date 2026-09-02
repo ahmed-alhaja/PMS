@@ -39,7 +39,7 @@ function store(array $requsts)
 
     if (file_exists($path)) {
         $data = file_get_contents($path);
-        $arrayProducts = json_decode($data, true);
+        $arrayProducts = json_decode($data, true) ?? [];
     }
     // Füge alten Produkten, die keine ID haben, IDs hinzu.
     foreach ($arrayProducts as $index => &$product) {
