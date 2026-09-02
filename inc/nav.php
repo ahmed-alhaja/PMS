@@ -1,4 +1,4 @@
-<?php //unset($_SESSION['count']); ?>
+<?php //session_destroy(); ?>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
@@ -15,7 +15,7 @@
                 <button class="btn btn-outline-dark" type="submit">
                     <i class="bi-cart-fill me-1"></i>
                     Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill"><?= isset($_SESSION['count']) ? $_SESSION['count'] : 0 ?></span>
+                    <span class="badge bg-dark text-white ms-1 rounded-pill"><?= $_SESSION['count'] ?? 0 ?></span>
                 </button>
             </form>
         </div>

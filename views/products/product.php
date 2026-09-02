@@ -90,9 +90,8 @@ if ($productId !== null) {
                             <!-- Quantity + Add To Cart -->
 
                             <form
-                                action="<?= BASE_URL . 'actions/cart/cartFunctions.php' ?>"
+                                action="<?= BASE_URL . 'actions/cart/cartFunctions.php?id=' . $product['id'] ?>"
                                 method="POST">
-
                                 <div class="d-flex align-items-center mb-4">
 
                                     <input

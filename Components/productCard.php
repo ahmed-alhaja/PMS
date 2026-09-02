@@ -41,7 +41,7 @@ $productsToShow = $productsToShow ?? $arrayProducts;
 
                     <a
                         class="btn btn-outline-dark mt-auto"
-                        href="<?= BASE_URL . 'actions/cart/cartFunctions.php' ?>">
+                        href="<?= BASE_URL . 'actions/cart/cartFunctions.php?id=' . $product['id'] ?>">
                         Add to cart
                     </a>
 
