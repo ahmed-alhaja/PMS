@@ -1,0 +1,102 @@
+[
+    {
+        "product_name": "Noel Peck",
+        "category_id": "5",
+        "price": "232",
+        "stock_quantity": "723",
+        "description": "Minim quos alias omn",
+        "status": "active",
+        "image": "6a971efcc7537.png",
+        "id": 1
+    },
+    {
+        "product_name": "Karen Rhodes",
+        "category_id": "1",
+        "price": "902",
+        "stock_quantity": "465",
+        "description": "Aliquid sint numquam",
+        "status": "active",
+        "image": "6a971fe3da327.png",
+        "id": 2
+    },
+    {
+        "product_name": "Judah Odom",
+        "category_id": "1",
+        "price": "499",
+        "stock_quantity": "113",
+        "description": "Quos cupiditate susc",
+        "status": "inactive",
+        "image": "6a971ff2c0eda.png",
+        "id": 3
+    },
+    {
+        "product_name": "Richard Barnes",
+        "category_id": "2",
+        "price": "30",
+        "stock_quantity": "307",
+        "description": "Magni saepe officia ",
+        "status": "active",
+        "image": "6a973036d757c.png",
+        "id": 4
+    },
+    {
+        "product_name": "Jessamine Shepherd",
+        "category_id": "4",
+        "price": "329",
+        "stock_quantity": "433",
+        "description": "Ex eveniet recusand",
+        "status": "inactive",
+        "image": "6a973097c02e6.png",
+        "id": 5
+    },
+    {
+        "product_name": "Kasper Goodman",
+        "category_id": "2",
+        "price": "145",
+        "stock_quantity": "437",
+        "description": "Sint pariatur Mini",
+        "status": "active",
+        "image": "6a9730a942109.png",
+        "id": 6
+    },
+    {
+        "product_name": "Fiona Mcneil",
+        "category_id": "2",
+        "price": "175",
+        "stock_quantity": "193",
+        "description": "Reprehenderit repudi",
+        "status": "inactive",
+        "image": "6a9730b332250.png",
+        "id": 7
+    },
+    {
+        "product_name": "MacKenzie Summers",
+        "category_id": "5",
+        "price": "365",
+        "stock_quantity": "402",
+        "description": "Aut eos quia deserun",
+        "status": "active",
+        "image": "6a9730bc9a3e3.png",
+        "id": 8
+    },
+    {
+        "product_name": "Jaime Boone",
+        "category_id": "3",
+        "price": "379",
+        "stock_quantity": "674",
+        "description": "Numquam corrupti qu",
+        "status": "inactive",
+        "image": "6a9730c386618.png",
+        "id": 9
+    },
+    {
+        "product_name": "Dominique Dixon",
+        "category_id": "5",
+        "price": "833",
+        "stock_quantity": "757",
+        "description": "Iste occaecat ut eum",
+        "status": "inactive",
+        "image": "6a975d1a2e815.png",
+        "id": 10
+    }
+]
