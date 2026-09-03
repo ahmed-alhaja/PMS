@@ -8,7 +8,7 @@ unset($_SESSION['errors']);
 function showError($errors, $key)
 {
     if (isset($errors[$key])) {
-        echo "<p class='text-danger'>{$errors[$key]}</p>";
+        echo "<p class='text-danger'>" . htmlspecialchars($errors[$key], ENT_QUOTES, 'UTF-8') . "</p>";
     }
 }
 
@@ -56,8 +56,6 @@ function showError($errors, $key)
                         id="product_category"
                         name="category_id"
                         class="form-select border border-success">
-                        <?php showError($errors, 'category_id'); ?>
-
                         <option value="">Select category</option>
                         <option value="1">Sports Cars</option>
                         <option value="2">SUVs</option>
@@ -66,6 +64,7 @@ function showError($errors, $key)
                         <option value="5">Luxury Cars</option>
 
                     </select>
+                    <?php showError($errors, 'category_id'); ?>
 
                 </div>
 

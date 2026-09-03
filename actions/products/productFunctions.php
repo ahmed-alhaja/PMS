@@ -20,8 +20,6 @@ function create() {}
 
 function store(array $requsts)
 {
-    print_r($requsts);
-    // geben die data aus dem requests und vaildiere sie machen.
     validateRequired($requsts);
     $imageName = uploadImage($_FILES['image']);
     if ($imageName) {
