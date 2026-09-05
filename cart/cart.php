@@ -46,7 +46,7 @@
                                     </td>
 
                                     <td>
-                                        <a href="#" class="btn btn-danger">Delete</a>
+                                        <a href="<?= BASE_URL . 'actions/delete/deleteItem.php?id=' . $item['id'] ?>" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

@@ -17,3 +17,19 @@ function validateRequired(array $requests)
         exit;
     }
 }
+
+// function negativeNumber(array $requests)
+// {
+//     global $errors;
+//     foreach ($requests as $key => $request) {
+//         if (is_numeric($request) && $request <= 0) {
+//             $errors[$key] = "This field $key cannot be zero or negative";
+//         }
+//     }
+
+//     if ($errors) {
+//         $_SESSION['errors'] = $errors;
+//         header('Location: ' . $_SERVER['HTTP_REFERER']);
+//         exit;
+//     }
+// }
