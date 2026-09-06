@@ -38,7 +38,7 @@
                                     <td>$<?= number_format($item['price'], 2) ?></td>
 
                                     <td>
-                                        <input type="number" name="quantity[<?= $item['id'] ?>]" value="<?= $item['quantity'] ?>">
+                                        <input type="number" min="1" name="quantity[<?= $item['id'] ?>]" value="<?= $item['quantity'] ?>">
                                     </td>
 
                                     <td>
@@ -53,9 +53,13 @@
                         </tbody>
 
                         <tr>
-                            <td colspan="6">
-                                <button type="submit" class="btn btn-primary">Checkout</button>
-                            </td>
+                            <?php if (empty($sessionCart)): ?>
+                                <td colspan="6" class="text-center">Your cart is empty.</td>
+                            <?php else: ?>
+                                <td colspan="6">
+                                    <button type="submit" class="btn btn-primary">Checkout</button>
+                                </td>
+                            <?php endif; ?>
                         </tr>
                     </table>
                 </form>

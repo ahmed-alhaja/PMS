@@ -98,5 +98,25 @@
         "status": "inactive",
         "image": "6a978562a7e50.jpg",
         "id": 10
+    }       ,
+    {
+        "product_name": "Hilel Boyd",
+        "category_id": "1",
+        "price": "258",
+        "stock_quantity": "903",
+        "description": "Molestias a quisquam",
+        "status": "inactive",
+        "image": "6a9cc10a09b9a.webp",
+        "id": 13
+    },
+    {
+        "product_name": "Odessa Hubbard",
+        "category_id": "3",
+        "price": "791",
+        "stock_quantity": "206",
+        "description": "Sunt non cupidatat a",
+        "status": "active",
+        "image": "6a9cc13b65ba2.jpg",
+        "id": 12
     }
 ]
