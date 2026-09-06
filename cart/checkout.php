@@ -214,7 +214,7 @@ foreach ($_SESSION['cart'] ?? [] as $cartItem) {
                         </label>
 
                         <input
-                            type="number"
+                            type="tel"
                             name="phone"
                             id="phone"
                             class="form-control">
